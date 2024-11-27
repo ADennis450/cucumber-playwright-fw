@@ -43,7 +43,6 @@ After(async function ({ pickle, result }) {
 });
 
 AfterAll(async function () {
-    generateReport()
     await browser.close();
 })
 
