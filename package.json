@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cross-env ENV=dev cucumber-js",
     "uat": "cross-env ENV=uat cucumber-js",
-    "report": "ts-node generate-report.ts"
+    "generate-report": "ts-node generate-report.ts"
   },
   "keywords": [],
   "author": "",
@@ -15,12 +15,12 @@
     "@cucumber/cucumber": "^11.1.0",
     "@playwright/test": "^1.49.0",
     "@types/node": "^22.9.1",
+    "cucumber-html-reporter": "^7.2.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
   },
   "dependencies": {
     "cross-env": "^7.0.3",
-    "cucumber-html-reporter": "^7.2.0",
     "dotenv": "^16.4.5",
     "winston": "^3.17.0"
   }

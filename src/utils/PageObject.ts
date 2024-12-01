@@ -23,7 +23,6 @@ export class PageObject {
 
     public static getElement(element: string) {
         const refinedElement = element.replace(' ', '_').toLowerCase();
-        console.log(this.po[refinedElement])
         return this.po[refinedElement];
     }
 }
