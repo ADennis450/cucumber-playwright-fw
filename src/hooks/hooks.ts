@@ -35,6 +35,9 @@ After(async function ({ pickle, result }) {
     if (result?.status != Status.FAILED) {
         img = await CurrentPage.page.screenshot(
             { path: `./test-results/screenshots/${pickle.name}.png`, type: "png" })
+        await this.attach(
+            img, "image/png"
+        );
     }
     await CurrentPage.page.close();
     await context.close();

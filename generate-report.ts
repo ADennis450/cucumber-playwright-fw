@@ -6,6 +6,8 @@ const options: reporter.Options = {
     output: 'test-results/reports/cucumber-report.html',  // Specify the custom folder
     reportSuiteAsScenarios: true,
     launchReport: true,
+    screenshotsDirectory: 'test-results/screenshots/',
+    storeScreenshots: true,
     metadata: {
         "App Version": "1.0.0",
         "Test Environment": `${process.env.ENV?.toUpperCase()}`
