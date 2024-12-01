@@ -11,4 +11,7 @@ npm install
 https://marketplace.visualstudio.com/items?itemName=CucumberOpen.cucumber-official
 
 ### Steps 4. Run a test by tag name
-npx cross-env ENV=uat cucumber-js --tags @tagName 
+npx cross-env ENV={env} cucumber-js --tags @{tagName}
+
+### Steps 5. Generate a report
+npx ts-node generate-report.ts
