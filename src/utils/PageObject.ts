@@ -1,19 +1,29 @@
 import path from "path";
-import { Login } from "../selectors/Login";
+import { Login } from "../page-objects/Login";
+import { Products } from "../page-objects/Products";
 
 export class PageObject {
-    public static po: any;
+    private static po: any;
     public static getPageObject(className: string): any {
-        switch(className.toLocaleLowerCase()){
+        const pageObject = className.toLocaleLowerCase();
+        switch(pageObject){
             case 'login': {
                 this.po = new Login();
                 break
             }
+            case 'products': {
+                this.po = new Products();
+                break
+            }
             default: {
-                break;
+                throw new Error(`No page object for ${pageObject}.`)
             }
         }
     }
-    
 
+    public static getElement(element: string) {
+        const refinedElement = element.replace(' ', '_').toLowerCase();
+        console.log(this.po[refinedElement])
+        return this.po[refinedElement];
+    }
 }

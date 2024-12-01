@@ -7,6 +7,13 @@
 			"problemMatcher": [],
 			"label": "npm: dev",
 			"detail": "cross-env ENV=prod cucumber-js"
+		},
+		{
+			"type": "npm",
+			"script": "uat",
+			"problemMatcher": [],
+			"label": "npm: uat",
+			"detail": "cross-env ENV=uat cucumber-js"
 		}
 	]
 }
