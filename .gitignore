@@ -7,3 +7,4 @@ test-results/videos/
 test-results/trace/
 test-results/report/
 dist/
+logs/

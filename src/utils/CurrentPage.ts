@@ -6,7 +6,6 @@ export const CurrentPage = {
     page: undefined as Page,
     // @ts-ignore
     logger: undefined as Logger,
-    // @ts-ignore
 }
 
 export const CurrentPageObject = {

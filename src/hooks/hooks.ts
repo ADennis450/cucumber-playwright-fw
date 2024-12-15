@@ -3,6 +3,7 @@ import { Browser, BrowserContext } from "@playwright/test";
 import { getBrowser } from "../utils/Browser";
 import { CurrentPage } from "../utils/CurrentPage";
 import { getEnv } from "../env/env";
+import { createLogger, format, transports } from "winston";
 
 let browser: Browser;
 let context: BrowserContext;
@@ -25,6 +26,19 @@ Before(async function ({ pickle }) {
     sources: true,
     screenshots: true,
     snapshots: true,
+  });
+  CurrentPage.logger = createLogger({
+    level: 'info',
+    format: format.combine(
+      format.timestamp(),
+      format.printf(({ timestamp, level, message }) => {
+        return `[${timestamp}] [${level.toUpperCase()}]: ${message}`;
+      })
+    ),
+    transports: [
+      new transports.Console(),
+      new transports.File({ filename: 'logs/cucumber.log' }), // Logs to a file
+    ],
   });
   CurrentPage.page = await context.newPage();
 });
