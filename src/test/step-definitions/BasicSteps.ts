@@ -1,12 +1,7 @@
 import { Given, When, Then } from "@cucumber/cucumber";
 import { CurrentPage, CurrentPageObject } from "../../utils/CurrentPage";
-import dotenv from "dotenv";
 import { PageObject } from "../../utils/PageObject";
 import { expect } from "@playwright/test";
-
-Given("I do stuff", () => {
-  console.log("doin stuff");
-});
 
 Given("I go to the {string} page", async (pageName: string) => {
   PageObject.getPageObject(pageName);
