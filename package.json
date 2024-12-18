@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cross-env ENV=dev cucumber-js",
     "uat": "cross-env ENV=uat cucumber-js",
-    "generate-report": "ts-node generate-report.ts"
+    "generate-report": "ts-node GenerateReport.ts"
   },
   "keywords": [],
   "author": "",
