@@ -24,3 +24,8 @@ Then("I am on the {string} page", async (pageName: string) => {
   await CurrentPage.page.waitForURL(PageObject.getElement("url"))
   expect(CurrentPage.page.url()).toBe(PageObject.getElement("url"));
 });
+
+Then('the {string} equals {string}', async (element: string, expectedElementText: string) => {
+  const elementText = await CurrentPage.page.locator(PageObject.getElement(element)).textContent()
+  expect(elementText === expectedElementText)
+})

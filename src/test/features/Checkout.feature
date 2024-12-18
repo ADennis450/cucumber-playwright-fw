@@ -13,4 +13,10 @@ Scenario: Buy A Saucelab Backpack
  And I click on the "cart icon"
  And I am on the "cart" page
  And I click on the "checkout button"
- And I am on the "checkout" page 
+ And I am on the "checkout" page
+ And I enter "John" into the "first name field"
+ And I enter "Doe" into the "last name field"
+ And I enter "12345" into the "zip code field"
+ When I click on the "continue button"
+ Then the "summary total label" equals "Total: $32.39"
+ 

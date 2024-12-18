@@ -7,6 +7,7 @@ export class Checkout extends BasePage {
     public last_name_field = '#last-name';
     public zip_code_field = '#postal-code';
     public continue_button = '//input[@value="CONTINUE"]';
+    public summary_total_label = '//div[@class="summary_total_label"]';
     
     constructor() {
         super();
