@@ -1,12 +1,7 @@
 import { Given, When, Then } from "@cucumber/cucumber";
 import { CurrentPage, CurrentPageObject } from "../../utils/CurrentPage";
-import dotenv from "dotenv";
 import { PageObject } from "../../utils/PageObject";
 import { expect } from "@playwright/test";
-
-Given("I do stuff", () => {
-  console.log("doin stuff");
-});
 
 Given("I go to the {string} page", async (pageName: string) => {
   PageObject.getPageObject(pageName);
@@ -29,3 +24,8 @@ Then("I am on the {string} page", async (pageName: string) => {
   await CurrentPage.page.waitForURL(PageObject.getElement("url"))
   expect(CurrentPage.page.url()).toBe(PageObject.getElement("url"));
 });
+
+Then('the {string} equals {string}', async (element: string, expectedElementText: string) => {
+  const elementText = await CurrentPage.page.locator(PageObject.getElement(element)).textContent()
+  expect(elementText === expectedElementText)
+})
