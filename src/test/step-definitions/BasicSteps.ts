@@ -2,6 +2,7 @@ import { Given, When, Then } from "@cucumber/cucumber";
 import { CurrentPage, CurrentPageObject } from "../../utils/CurrentPage";
 import { PageObject } from "../../utils/PageObject";
 import { expect } from "@playwright/test";
+import { ApiUtil } from "../../utils/ApiUtil";
 
 Given("I go to the {string} page", async (pageName: string) => {
   PageObject.getPageObject(pageName);
