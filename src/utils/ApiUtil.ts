@@ -20,7 +20,3 @@ export class ApiUtil {
        return this.apiResponse.get(key);
     }
 }
-
-function callback(arg0: null, data: string) {
-    throw new Error('Function not implemented.');
-}
