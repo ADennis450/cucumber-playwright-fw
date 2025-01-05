@@ -7,6 +7,6 @@ export const getEnv = () => {
             path: `src/env/.env.${process.env.ENV}`
         })
     } else {
-        console.error("No environment specified")
+        throw new Error("No environment specified. Specify the env in the run command")
     }
 }
