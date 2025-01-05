@@ -17,11 +17,9 @@ jobs:
      - name: Install Playwright Browsers
        run: npx playwright install --with-deps  
      - name: Run Dev Tests
-       env:
-          ENVIRONMENT: dev
-       run: npx cucumber-js
+       run: npm run dev
      - name: Archive Test Results
-       if: failure()
+       if: always()
        uses: actions/upload-artifact@v3
        with:
          name: cucumber-results
