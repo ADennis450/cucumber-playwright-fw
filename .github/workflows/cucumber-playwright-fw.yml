@@ -8,9 +8,17 @@ jobs:
    steps:
      - name: Checkout
        uses: actions/Checkout@v4
-     - name: Install dependencies
+     - name: Install Dependencies
        run: npm install
-     - name: Install playwright dependencies
+     - name: Install Playwright Browsers
        run: npx playwright install --with-deps  
      - name: Run Dev Tests
-       run: npx cross-env ENV=dev cucumber-js  
+       env:
+          ENVIRONMENT: dev
+       run: npx cucumber-js
+     - name: Archive Test Results
+       if: failure()
+       uses: actions/upload-artifact@v3
+       with:
+         name: cucumber-results
+         path: test-results/reports/cucumber-report.html 
