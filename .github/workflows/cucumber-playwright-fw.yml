@@ -2,7 +2,8 @@ name: cucumber-playwright-fw
 on: push
 
 jobs:
-  job1:
+  test:
+   timeout-minutes: 60
    name: Run UI Tests
    runs-on: ubuntu-latest
    steps:
