@@ -10,3 +10,5 @@ jobs:
        uses: actions/Checkout@v4
      - name: Install dependencies
        run: npm install
+     - name: Run Dev Tests
+       run: npx cross-env ENV=dev cucumber-js  
