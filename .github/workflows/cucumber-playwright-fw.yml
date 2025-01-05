@@ -10,5 +10,7 @@ jobs:
        uses: actions/Checkout@v4
      - name: Install dependencies
        run: npm install
+     - name: Install playwright dependencies
+       run: npx playwright install --with-deps  
      - name: Run Dev Tests
        run: npx cross-env ENV=dev cucumber-js  
