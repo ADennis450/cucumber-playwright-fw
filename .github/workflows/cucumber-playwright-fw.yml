@@ -1,0 +1,12 @@
+name: cucumber-playwright-fw
+on: push
+
+jobs:
+  job1:
+   name: Run UI Tests
+   runs-on: ubuntu-latest
+   steps:
+     - name: Checkout
+       uses: actions/Checkout@v4
+     - name: Install dependencies
+       run: npm install
