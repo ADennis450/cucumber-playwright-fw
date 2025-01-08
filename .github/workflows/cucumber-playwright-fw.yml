@@ -20,6 +20,7 @@ jobs:
      - name: Run Dev Tests
        run: npm run dev
      - name: Generate Reports
+       if: always()
        run: npm run generate-report
      - name: Archive Test Results
        if: always()
