@@ -9,11 +9,13 @@ let browser: Browser;
 let context: BrowserContext;
 
 BeforeAll(async () => {
+  console.log('initiating before all logic')
   getEnv();
   browser = await getBrowser();
 });
 
 Before(async function ({ pickle }) {
+  console.log('initiating before logic')
   const scenarioName = pickle.name + pickle.id;
   context = await browser.newContext({
     recordVideo: {
