@@ -40,6 +40,7 @@ Before(async function ({ pickle }) {
       new transports.File({ filename: 'logs/cucumber.log' }), // Logs to a file
     ],
   });
+  CurrentPage.logger.log('info', 'Creating page')
   CurrentPage.page = await context.newPage();
 });
 
