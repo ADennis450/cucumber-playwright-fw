@@ -19,6 +19,8 @@ jobs:
        run: npx playwright install --with-deps  
      - name: Run Dev Tests
        run: npm run dev
+     - name: Generate Reports
+       run: npm run generate-report
      - name: Archive Test Results
        if: always()
        uses: actions/upload-artifact@v3
