@@ -1,6 +1,7 @@
 name: cucumber-playwright-fw
 on: push
-
+env: 
+  ENV: dev
 jobs:
   test:
    timeout-minutes: 60
