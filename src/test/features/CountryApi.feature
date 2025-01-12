@@ -1,4 +1,4 @@
-@CountryAPI @API
+@CountryAPI @API @Dev
 Feature: CountryAPI
 
 Scenario: Get Country Official name

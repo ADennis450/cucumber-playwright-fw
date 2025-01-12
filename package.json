@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Simple Node.js Cucumber Playwright Framework",
   "scripts": {
-    "dev": "npx cross-env ENV=dev cucumber-js --format json --format progress",
+    "dev": "npx cross-env ENV=dev cucumber-js --tags '@Dev'",
     "uat": "npx cross-env ENV=uat cucumber-js",
     "generate-report": "ts-node GenerateReport.ts"
   },

@@ -1,4 +1,4 @@
-@Login
+@Login @Dev
 Feature: Login
 
 Scenario: Sign into SwagLabs
