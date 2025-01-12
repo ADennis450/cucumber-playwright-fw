@@ -1,11 +1,10 @@
 {
   "name": "cucumber-playwright-fw",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Simple Node.js Cucumber Playwright Framework",
   "scripts": {
-    "dev": "cross-env ENV=dev cucumber-js",
-    "uat": "cross-env ENV=uat cucumber-js",
+    "dev": "npx cross-env ENV=dev cucumber-js --tags '@Dev'",
+    "uat": "npx cross-env ENV=uat cucumber-js",
     "generate-report": "ts-node GenerateReport.ts"
   },
   "keywords": [],
