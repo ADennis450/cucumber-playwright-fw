@@ -9,6 +9,10 @@ export class Login extends BasePage {
     
     constructor() {
         super();
-        this.url = this.baseUrl + 'v1/' 
+        if (process.env.ENV === 'uat') {
+            this.url = this.baseUrl + 'v1/';
+        } else {
+            this.url = this.baseUrl;
+        }
     }
 }
