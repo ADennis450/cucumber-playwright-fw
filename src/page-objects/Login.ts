@@ -9,6 +9,6 @@ export class Login extends BasePage {
     
     constructor() {
         super();
-        this.url = this.baseUrl
+        this.url = this.baseUrl + 'v1/' 
     }
 }

@@ -32,7 +32,7 @@ export class PageObject {
         }
     }
 
-    public static getElement(element: string) {
+    public static getLocator(element: string) {
         const refinedElement = element.replace(/ /g, '_').toLowerCase();
         return this.po[refinedElement];
     }

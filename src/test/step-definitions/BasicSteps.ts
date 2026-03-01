@@ -7,27 +7,29 @@ import { getBrowser } from "../../utils/Browser";
 
 Given("I go to the {string} page", async (pageName: string) => {
   PageObject.getPageObject(pageName);
-  await CurrentPage.page.goto(PageObject.getElement('url'));
+  await CurrentPage.page.goto(PageObject.getLocator('url'));
 });
 
 When(
   "I enter {string} into the {string}",
   async (arg: string, element: string) => {
-    await CurrentPage.page.locator(PageObject.getElement(element)).fill(arg);
+    await CurrentPage.page.locator(PageObject.getLocator(element)).fill(arg);
   }
 );
 
 When("I click on the {string}", async (element: string) => {
-  await CurrentPage.page.locator(PageObject.getElement(element)).click();
+  await CurrentPage.page.locator(PageObject.getLocator(element)).click();
 });
 
 Then("I am on the {string} page", async (pageName: string) => {
   PageObject.getPageObject(pageName);
-  await CurrentPage.page.waitForURL(PageObject.getElement("url"))
-  expect(CurrentPage.page.url()).toBe(PageObject.getElement("url"));
+  await CurrentPage.page.waitForURL(PageObject.getLocator("url"))
+  expect(CurrentPage.page.url()).toBe(PageObject.getLocator("url"));
 });
 
 Then('the {string} equals {string}', async (element: string, expectedElementText: string) => {
-  const elementText = await CurrentPage.page.locator(PageObject.getElement(element)).textContent()
-  expect(elementText === expectedElementText)
+  const elementText = await CurrentPage.page.locator(PageObject.getLocator(element)).textContent()
+  expect(elementText).toBe(expectedElementText)
 })
+
+
