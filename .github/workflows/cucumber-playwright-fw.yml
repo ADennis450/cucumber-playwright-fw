@@ -25,7 +25,7 @@ jobs:
        run: npm run generate-report
      - name: Archive Test Results
        if: always()
-       uses: actions/upload-artifact@v3
+       uses: actions/upload-artifact@v4
        with:
          name: cucumber-results
          path: test-results/reports/cucumber-report.html 
